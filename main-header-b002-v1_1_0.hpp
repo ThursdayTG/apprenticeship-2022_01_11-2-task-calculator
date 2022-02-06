@@ -4,21 +4,18 @@
 
 
 
-void cls() {
+inline void cls() {
 
 	std::cout	<< "\033[2J\033[1;1H";
 
 	/*
 	 * function name derived from system("cls")
-	 * string of special characters that will
-	 * translate to a clear screen command in the console.
+	 * string of special characters that will translate to a clear screen command in the console.
 	 * should work on any OS.
 	 */
-
 }
 
-
-void pause() {
+inline void pause() {
 
 	std::cin.ignore();
 	std::cin.get();
@@ -30,11 +27,9 @@ void pause() {
 	 * `cin.ignore()` may not always be necessary,
 	 * in that case use `cin.get()` instead of `pause();`
 	 */
-
 }
 
-
-bool queryRestart() {
+inline bool queryRestart() {
 
 	std::string	restartOperator = "0";
 		// default value tries to prevent do-while loop from repeating in case of unexpected error
@@ -49,5 +44,4 @@ bool queryRestart() {
 		return true;
 	else
 		return false;
-
 }

@@ -9,6 +9,7 @@
 
 
 
+/*	namespace stuff	*/
 using	std::cout;
 using	std::cin;
 using	std::string;
@@ -34,7 +35,7 @@ int main() {
 		// used to determine whether do-while loop should be repeated manually
 
 	int		repeatInput;
-	/**/
+	/*	local variable declaration	*/
 
 
 	do {
@@ -46,7 +47,7 @@ int main() {
 		string	mathOperator;
 		/*	local variable declaration	*/
 
-		/*	primary execution block	*/
+		/*	user input	*/
 		cout	<< " \n ~ ~ ~ calculator ~ ~ ~"
 				<< " \n"
 				<< " \n type \"help\" for a manual."
@@ -64,7 +65,7 @@ int main() {
 			else
 				double1 = std::stod(userInput1);
 
-		}	while (repeatInput != 0)
+		}	while (repeatInput != 0);
 
 		do {
 
@@ -78,12 +79,13 @@ int main() {
 			else
 				double2 = std::stod(userInput2);
 
-		}	while (repeatInput != 0)
-
-
+		}	while (repeatInput != 0);
 
 		cin		>> mathOperator;
+		/*	user input	*/
 
+
+		/*	primary function execution & output	*/
 		if		(mathOperator == "1" || mathOperator == "+")
 			addition(double1, double2);
 
@@ -95,8 +97,7 @@ int main() {
 
 		else if	(mathOperator == "4" || mathOperator == "/")
 			division(double1, double2);
-
-		/*	primary execution block	*/
+		/*	primary function execution & output	*/
 
 		/*	end block	*/
 		restartOperator = queryRestart();	// asks user whether current section of program should be looped

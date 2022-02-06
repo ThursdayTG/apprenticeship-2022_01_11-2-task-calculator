@@ -1,66 +1,67 @@
+// AUTHOR NOTE
+// the best part about this is that I have already made a calculator once, lol
+
+
+
 // inclusion of libraries
-	#include <cmath>
-	#include <iostream>
-	#include <string>
+#include <cmath>
+#include <iostream>
+#include <string>
 
 // inclusion of files
-	#include "main-header-b002-v1_1_0.hpp"
+#include "main-header-b002-v1_1_0.hpp"
 
-/* the best part about this is that I have already made a calculator once, lol */
-
-
-
-/*	using directives	*/
+// using directives
 using	std::cout;
 using	std::cin;
 using	std::string;
-using	std::stod;
 
 
 
-/*	function prototyping	*/
+// function prototyping
 int		help();
 double	userInputNumber();
 double	maths(double, double, string);
 
-
-
-/*	main function	*/
+// main function
 int main() {
 
-	/*	local variable declaration - main()	*/
-	int		restartOperator;
-		// used to determine whether do-while loop should be repeated manually
-	/*	local variable declaration - main()	*/
+	// used to determine whether do/while-loop should be repeated manually
+	bool	restartOperator;
 
 
 	do {
 
-		/*	primary execution block	*/
+		// primary variable declaration
 		double	inputDouble1 = 0.0;
 		double	inputDouble2 = 0.0;
 		string	mathOperator;
 
+
+		// default output
 		cout	<< " \n ~ ~ ~ calculator ~ ~ ~"
 				<< " \n"
 				<< " \n type \"help\" for a manual."
 				<< " \n";
 
+
+		// user input
 		inputDouble1 = userInputNumber();
 		cout	<< " operator: \t";
 		cin		>> mathOperator;
 		inputDouble2 = userInputNumber();
 
+
+		// primary function execution & output
 		cout	<< " ---------------- "
 				<< " \n result: \t"
 				<< maths(inputDouble1, inputDouble2, mathOperator)
 				<< " \n ";
-		/*	primary execution block	*/
 
-		/*	end block	*/
+
+		// end block
 		restartOperator = queryRestart();	// asks user whether current section of program should be looped
 		cls();								// clears screen
-		/*	end block	*/
 
 	}	while (restartOperator == true);
 
@@ -69,7 +70,7 @@ int main() {
 
 
 
-/*	functions / subroutines	*/
+// functions / subroutines
 double	userInputNumber() {
 
 	string	userInputStr = "0";
@@ -124,16 +125,16 @@ double	maths(double inputDouble1, double inputDouble2, string mathOperator) {
 /*	using C++ compiler from GCC via console
 
 	compile for debug and check for errors:
-g++ -Og -Wall -Wextra -Wpedantic -Werror main-source-b006.cpp -o main-newest.debug
+g++ -Og -Wall -Wextra -Wpedantic -Werror main-source-b007.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b006.cpp -o main-newest.release
+clear && g++ -O3 main-source-b007.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, check for errors, and run program:
-g++ -Og main-source-b006.cpp -o main-newest.debug && clear && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b006.cpp -o main-newest.release && ./main-newest.release
+g++ -Og main-source-b007.cpp -o main-newest.debug && clear && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b007.cpp -o main-newest.release && ./main-newest.release
 
-	g++ -Og main-source-b006.cpp -o main-newest.debug
+	g++ -Og main-source-b007.cpp -o main-newest.debug
  && clear
- && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b006.cpp -o main-newest.release
+ && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b007.cpp -o main-newest.release
  && ./main-newest.release
 */

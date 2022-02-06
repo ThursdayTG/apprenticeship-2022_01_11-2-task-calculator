@@ -65,7 +65,7 @@ int main() {
 			else
 				double1 = std::stod(userInput1);
 
-		}	while (repeatInput != 0);
+		}	while (repeatInput != 0)
 
 		do {
 
@@ -79,7 +79,7 @@ int main() {
 			else
 				double2 = std::stod(userInput2);
 
-		}	while (repeatInput != 0);
+		}	while (repeatInput != 0)
 
 		cin		>> mathOperator;
 		/*	user input	*/

@@ -1,2 +1,7 @@
 # apprenticeship-2022_01_11-2-task-calculator
-After being taught about functions, we were tasked with creating a calculator.
+
+I was genuinely amused by this task, as I had been working on a calculator before. That was several months in the past, but I found that to be helpful regardless.
+
+---
+
+This project has been uploaded primarily for archiving purposes.

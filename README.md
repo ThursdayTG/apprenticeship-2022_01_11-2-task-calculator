@@ -2,7 +2,9 @@
 
 I was genuinely amused by this task, as I had been working on a calculator before. That was several months in the past, but I found that to be helpful regardless.
 
-This is the last project that I had started with the versioning scheme that is seen here. While not quite as familiar with and needing more time to get used to how Git works and is usually utilised, I am moving considerably closer towards proper Semantic Versioning from here.
+This is the last project that I had started with the versioning scheme that is seen here. While needing more time to get used to how Git works and not being quite that familiar with it, I have finally embraced a versioning scheme that adheres much more accurately to Semantic Versioning after this project.
+
+For clarification to the uninitiated, b008 does not have a proper version number because it is an incomplete build. Since I have deleted all the files right after uploading all of their content to the main branch, not considering the "release" section here on GitHub, I will not bother with releases and properly marking complete and incomplete builds as such, lol
 
 ---
 

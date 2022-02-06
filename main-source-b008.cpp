@@ -16,7 +16,9 @@ using	std::cout;
 using	std::cin;
 using	std::string;
 
-
+/* text *
+ *
+/**/
 
 // function prototyping
 int		help();
@@ -29,7 +31,6 @@ int main() {
 	// used to determine whether do/while-loop should be repeated manually
 	bool	restartOperator;
 
-
 	do {
 
 		// primary variable declaration
@@ -37,11 +38,15 @@ int main() {
 		double	inputDouble2 = 0.0;
 		string	mathOperator;
 
+		int		amountDashes;			// used for final output
+
 
 		// default output
-		cout	<< " \n ~ ~ ~ calculator ~ ~ ~"
+		cout	<< " \n ~ ~ ~ ~ ~ calculator ~ ~ ~ ~ ~"
 				<< " \n"
-				<< " \n type \"help\" for a manual."
+				<< " \n enter first a number, then the mathematical operation, then the second number."
+				<< " \n enter \"h\" or \"help\" at any point to view the full user manual."
+				<< " \n"
 				<< " \n";
 
 
@@ -53,8 +58,15 @@ int main() {
 
 
 		// primary function execution & output
-		cout	<< " ---------------- "
-				<< " \n result: \t"
+		cout	<< " ";
+
+		for (	amountDashes = 0;
+				amountDashes < 16;
+				amountDashes++) {
+			cout << "-";
+		}
+
+		cout	<< " \n result: \t"
 				<< maths(inputDouble1, inputDouble2, mathOperator)
 				<< " \n ";
 
@@ -71,7 +83,7 @@ int main() {
 
 
 // functions / subroutines
-double	userInputNumber() {
+double userInputNumber() {
 
 	string	userInputStr = "0";
 	double	userInputDbl = 0;
@@ -84,13 +96,15 @@ double	userInputNumber() {
 		cout	<< " number: \t";
 		cin		>> userInputStr;
 
+		if	(userInputStr == "help")
+
 		userInputDbl = std::stod(userInputStr);
 	}
 
 	return userInputDbl;
 }
 
-int		help() {
+int help() {
 	cout	<< " \n now choose the operator:"
 			<< " \n enter '1' OR '+' for addition"
 			<< " \n enter '2' OR '-' for subtraction"
@@ -101,7 +115,7 @@ int		help() {
 	return 1;
 }
 
-double	maths(double inputDouble1, double inputDouble2, string mathOperator) {
+double maths(double inputDouble1, double inputDouble2, string mathOperator) {
 
 	double	result = 0.0;
 
@@ -125,16 +139,16 @@ double	maths(double inputDouble1, double inputDouble2, string mathOperator) {
 /*	using C++ compiler from GCC via console
 
 	compile for debug and check for errors:
-g++ -Og -Wall -Wextra -Wpedantic -Werror main-source-b007.cpp -o main-newest.debug
+g++ -Og -Wall -Wextra -Wpedantic -Werror main-source-b008.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b007.cpp -o main-newest.release
+clear && g++ -O3 main-source-b008.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, check for errors, and run program:
-g++ -Og main-source-b007.cpp -o main-newest.debug && clear && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b007.cpp -o main-newest.release && ./main-newest.release
+g++ -Og main-source-b008.cpp -o main-newest.debug && clear && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b008.cpp -o main-newest.release && ./main-newest.release
 
-	g++ -Og main-source-b007.cpp -o main-newest.debug
+	g++ -Og main-source-b008.cpp -o main-newest.debug
  && clear
- && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b007.cpp -o main-newest.release
+ && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b008.cpp -o main-newest.release
  && ./main-newest.release
 */

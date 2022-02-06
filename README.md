@@ -6,6 +6,8 @@ This is the last project that I had started with the versioning scheme that is s
 
 For clarification to the uninitiated, b008 does not have a proper version number because it is an incomplete build. Since I have deleted all the files right after uploading all of their content to the main branch, not considering the "release" section here on GitHub, I will not bother with releases and properly marking complete and incomplete builds as such, lol
 
+I may never return to this, as I would probably just write a calculator from scratch if I feel like making one.
+
 ---
 
 This project has been uploaded primarily for archiving purposes.

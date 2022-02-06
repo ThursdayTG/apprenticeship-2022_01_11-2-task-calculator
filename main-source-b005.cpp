@@ -9,7 +9,7 @@
 
 
 
-/*	namespace stuff	*/
+/*	using directives	*/
 using	std::cout;
 using	std::cin;
 using	std::string;
@@ -19,6 +19,8 @@ using	std::stod;
 
 /*	function prototyping	*/
 int		help();
+
+double	userInputNumber();
 
 void	addition(float, float);
 void	subtraction(float, float);
@@ -30,19 +32,16 @@ void	division(float, float);
 /*	main function	*/
 int main() {
 
-	/*	local variable declaration	*/
+	/*	local variable declaration - main()	*/
 	int		restartOperator;
 		// used to determine whether do-while loop should be repeated manually
-
-	int		repeatInput;
-	/*	local variable declaration	*/
+	/*	local variable declaration - main()	*/
 
 
 	do {
 
 		/*	local variable declaration	*/
-		string	userInput1 = "0",	userInput2 = "0";
-		double	double1 = 0,		double2 = 0;
+		double	inputDouble1 = 0.0, inputDouble2 = 0.0;
 
 		string	mathOperator;
 		/*	local variable declaration	*/
@@ -53,50 +52,23 @@ int main() {
 				<< " \n type \"help\" for a manual."
 				<< " \n";
 
-		do {
-
-			repeatInput = 0;
-
-			cout	<< " number 1: ";
-			cin		>> userInput1;
-
-			if	(	userInput1 == "help")
-				repeatInput = help();
-			else
-				double1 = std::stod(userInput1);
-
-		}	while (repeatInput != 0)
-
-		do {
-
-			repeatInput = 0;
-
-			cout	<< " number 2: ";
-			cin		>> userInput2;
-
-			if	(	userInput2 == "help")
-				repeatInput = help();
-			else
-				double2 = std::stod(userInput2);
-
-		}	while (repeatInput != 0)
-
-		cin		>> mathOperator;
+		inputDouble1 = userInputNumber();
+		inputDouble2 = userInputNumber();
 		/*	user input	*/
 
 
 		/*	primary function execution & output	*/
 		if		(mathOperator == "1" || mathOperator == "+")
-			addition(double1, double2);
+			addition(inputDouble1, inputDouble2);
 
 		else if	(mathOperator == "2" || mathOperator == "-")
-			subtraction(double1, double2);
+			subtraction(inputDouble1, inputDouble2);
 
 		else if	(mathOperator == "3" || mathOperator == "*")
-			multiplication(double1, double2);
+			multiplication(inputDouble1, inputDouble2);
 
 		else if	(mathOperator == "4" || mathOperator == "/")
-			division(double1, double2);
+			division(inputDouble1, inputDouble2);
 		/*	primary function execution & output	*/
 
 		/*	end block	*/
@@ -112,6 +84,25 @@ int main() {
 
 
 /*	functions / subroutines	*/
+double	userInputNumber() {
+
+	string	userInputStr = "0";
+	double	userInputDbl = 0;
+	int		repeatInput = 1;
+
+	while (repeatInput != 0) {
+
+		repeatInput = 0;
+
+		cout	<< " input: ";
+		cin		>> userInputStr;
+
+		userInputDbl = std::stod(userInputStr);
+	}
+
+	return userInputDbl;
+}
+
 int		help() {
 	cout	<< " \n now choose the operator:"
 			<< " \n enter '1' OR '+' for addition"
@@ -152,16 +143,16 @@ void	division(float double1, float double2) {
 /*	using C++ compiler from GCC via console
 
 	compile for debug and check for errors:
-g++ -Og -Wall -Wextra -Wpedantic -Werror main-source-b002-v2_0_0.cpp -o main-newest.debug
+g++ -Og -Wall -Wextra -Wpedantic -Werror main-source-b005.cpp -o main-newest.debug
 
 	clear and compile as final executable:
-clear && g++ -O3 main-source-b002-v2_0_0.cpp -o main-newest.release
+clear && g++ -O3 main-source-b005.cpp -o main-newest.release
 
 	clear console, compile debug executable, compile release executable, check for errors, and run program:
-g++ -Og main-source-b002-v2_0_0.cpp -o main-newest.debug && clear && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b002-v2_0_0.cpp -o main-newest.release && ./main-newest.release
+g++ -Og main-source-b005.cpp -o main-newest.debug && clear && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b005.cpp -o main-newest.release && ./main-newest.release
 
-	g++ -Og main-source-b002-v2_0_0.cpp -o main-newest.debug
+	g++ -Og main-source-b005.cpp -o main-newest.debug
  && clear
- && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b002-v2_0_0.cpp -o main-newest.release
+ && g++ -O3 -Wall -Wextra -Wpedantic -Werror main-source-b005.cpp -o main-newest.release
  && ./main-newest.release
 */
